@@ -1,0 +1,5 @@
+package com.yitianyigexiangfa.annotation;
+
+public class Table {
+
+}

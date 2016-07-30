@@ -1,0 +1,18 @@
+package com.yitianyigexiangfa.hello;
+
+public class Application {
+	
+	MessageService mockMessageService(){
+		return new MessageService(){
+			public String getMessage(){
+				return "Hello World";
+			}
+		};
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
