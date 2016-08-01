@@ -17,4 +17,6 @@
 <fullyQualifiedTypeName name="java.lang.annotation.RetentionPolicy"/>
 <fullyQualifiedTypeName name="java.lang.annotation.Documented"/>
 <fullyQualifiedTypeName name="com.yitianyigexiangfa.annotation.AliasFor"/>
+<fullyQualifiedTypeName name="org.thymeleaf.spring4.SpringTemplateEngine"/>
+<fullyQualifiedTypeName name="org.thymeleaf.spring4.view.ThymeleafViewResolver"/>
 </qualifiedTypeNameHistroy>
