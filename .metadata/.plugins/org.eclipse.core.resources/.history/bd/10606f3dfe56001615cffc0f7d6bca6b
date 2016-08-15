@@ -1,5 +1,0 @@
-package com.yitianyigexiangfa.annotation;
-
-public @interface RequestAttribute {
-
-}

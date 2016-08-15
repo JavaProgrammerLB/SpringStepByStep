@@ -1,8 +1,0 @@
-package com.yitianyigexiangfa.annotation;
-
-public @interface RequestMethod {
-
-	public enum RequestMethod{
-		GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS, TRACE
-	}
-}
