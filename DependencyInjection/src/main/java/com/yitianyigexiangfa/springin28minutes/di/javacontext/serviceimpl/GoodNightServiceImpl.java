@@ -8,7 +8,7 @@ import com.yitianyigexiangfa.springin28minutes.di.javacontext.service.HiService;
 public class GoodNightServiceImpl implements HiService {
 
 	public String sayHi() {
-		return "Good night";
+		return "Good Night";
 	}
 	
 	

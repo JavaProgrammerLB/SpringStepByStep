@@ -20,14 +20,23 @@ public class DIWithJavaContext {
 	@Qualifier(value="goodMorningServiceImpl")
 	private HiService service;
 	
+	@Autowired
+	@Qualifier(value="goodNightServiceImpl")
+	private HiService service2;
+	
 	@Test
-	public void javaContextDITest(){
+	public void javaContextDITest4GoodMorningServiceImpl(){
 		assertEquals("Good Morning", service.sayHi());
+	}
+	
+	@Test
+	public void javaContextDITest4GoodNightServiceImpl(){
+		assertEquals("Good Night", service2.sayHi());
 	}
 }
 
 @Configuration
-@ComponentScan(basePackages="package com.yitianyigexiangfa.springin28minutes.serviceimpl")
+@ComponentScan(basePackages="com.yitianyigexiangfa.springin28minutes.di.javacontext.serviceimpl")
 class JavaContext{
 	
 }
