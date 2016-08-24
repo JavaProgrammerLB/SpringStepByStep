@@ -1,2 +1,2 @@
 # SpringStepByStep
-Use Spring framework Step By Step
+Beat Spring framework Step By Step
