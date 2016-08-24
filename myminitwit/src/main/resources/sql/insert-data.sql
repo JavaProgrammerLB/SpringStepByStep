@@ -1,0 +1,1 @@
+INSERT INTO user(user_id, username, email, pw) VALUES (1, 'user001','user001@email.com','$2a$10$IHdRfnhNgQesPFD5hrUcMOvyx5RrRcklkpXfs9YX4j1qXvouEeVIa');
