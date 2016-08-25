@@ -5,6 +5,38 @@ body {
 	font-size: 14px;
 }
 
+a {
+	color: #2677FF;
+}
+
+a:hover {
+	color: #333;	
+}
+
+input[type="text"]
+input[type="passord"] {
+	background: white;
+	border: 1px solid #BFE6FF;
+	padding: 2px;
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 14px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	color: #1057FF;
+}
+
+input[type="submit"] {
+	background: #1057FF;
+	border: 1px solid #073BFF;
+	padding: 1px 3px;
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	-moz-border-radius: 2px;
+	-webkit-boeder-rasius: 2px;
+	color: white;
+}
+
 div.page {
 	background: white;
 	border: 1px solid #6ECCFF;
@@ -37,6 +69,12 @@ div.page div.navigation a{
 	font-weight: bold;
 }
 
+div.page h2 {
+	margin: 0 0 15px 0;
+	color: #1057FF;
+	text-shasow: 0 1px 2px #ccc;
+}
+
 div.page div.body{
 	padding: 10px;
 }
@@ -46,4 +84,91 @@ div.page div.footer {
 	color: #888;
 	padding: 5px 10px;
 	font-size: 12px;
+}
+
+div.page div.followstatus {
+	border: 1px solid #ccc;
+	background: #E3EBFF;
+	-moz-border-radius: 2px;
+	-webkit-border-rasius: 2px;
+	padding: 3px;
+	font-size: 13px;
+}
+
+div.page ul.messages {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.page ul.messages li {
+	margin: 10px 0;
+	padding: 5px;
+	background: #F0FAFF;
+	border: 1px solid #DBF3FF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	min-height: 48px;
+}
+
+div.page ul.messages p {
+	margin: 0;
+}
+
+div.page ul.messages li img {
+	float: left;
+	padding: 0 10px 0 0;
+}
+
+div.page ul.messages li small {
+	font-size: 0.9em;
+	color: #888;
+}
+
+div.page div.twitbox {
+	margin: 10px 0;
+	padding: 5px;
+	background: #F0FAFF;
+	border: 1px solid #94E2FF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+div.page div.twitbox h3 {
+	margin: 0;
+	font-size: 1em;
+	color: #2C7EFF;
+}
+
+div.page div.twitbox p {
+	margin: 0;
+}
+
+div.page div.twitbox input[type="text"] {
+	width: 585px;
+}
+
+div.page div.twitbox input[type="submit"] {
+	width: 70px;
+	margin-left: 5px;
+}
+
+div.error {
+	margin: 10px 0;
+	background: #FAE4E4;
+	border: 1px solid #DD6F6F;
+	-moz-border-rasius: 2px;
+	-webkit-border-radius: 2px;
+	padding: 4px;
+	font-size: 13px;
+}
+
+div.success {
+	margin: 10px 0;
+	background: #FAFFE4;
+	border: 1px solid #DDFF6F;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	padding: 4px;
+	font-size: 13px;
 }
