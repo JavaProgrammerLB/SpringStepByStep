@@ -10,9 +10,16 @@ import static spark.SparkBase.staticFileLocation;
 
 
 
+
+
+
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+
+
 
 
 
@@ -25,6 +32,9 @@ import org.eclipse.jetty.util.UrlEncoded;
 
 
 
+
+
+
 import spark.ModelAndView;
 import spark.Request;
 import spark.template.freemarker.FreeMarkerEngine;
@@ -32,6 +42,9 @@ import spark.template.freemarker.FreeMarkerEngine;
 
 
 
+
+
+import spark.utils.StringUtils;
 
 import com.yitianyigexiangfa.model.LoginResult;
 import com.yitianyigexiangfa.model.Message;
@@ -228,9 +241,77 @@ public class WebConfig {
 		 * Registers the user.
 		 */
 		post("/register", (req, res) -> {
-			// TODO： here
-			return null;
+			Map<String, Object> map = new HashMap<>();
+			User user = new User();
+			try {
+				MultiMap<String> params = new MultiMap<String>();
+				UrlEncoded.decodeTo(req.body(), params, "UTF-8", -1);
+				BeanUtils.populate(user, params);
+			} catch (Exception e) {
+				halt(501);
+				return null;
+			}
+			String error = user.validate();
+			if(StringUtils.isEmpty(error)){
+				User existingUser = service.getUserbyUsername(user.getUsername());
+				if(existingUser == null) {
+					service.registerUser(user);
+					res.redirect("/login?r=1");
+					halt();
+				} else {
+					error = "The username is already taken";
+				}
+			}
+			map.put("error", error);
+			map.put("username", user.getUsername());
+			map.put("email", user.getEmail());
+			return new ModelAndView(map, "register.ftl");
 		},new FreeMarkerEngine());
+		/*
+		 * Checks if the user is already authenticated
+		 */
+		before("/register", (req, res) -> {
+			User authUser = getAuthenticatedUser(req);
+			if(authUser != null) {
+				res.redirect("/");
+				halt();
+			}
+		});
+		
+		/*
+		 * Registers a new message for the user.
+		 */
+		post("/message", (req, res) -> {
+			User user = getAuthenticatedUser(req);
+			MultiMap<String> params = new MultiMap<String>();
+			UrlEncoded.decodeTo(req.body(), params, "UTF-8", -1);
+			Message m = new Message();
+			m.setUserId(user.getId());
+			m.setPubDate(new Date());
+			BeanUtils.populate(m, params);
+			service.addMessage(m);
+			res.redirect("/");
+			return null;
+		});
+		/*
+		 * Checks if the user is authenticated
+		 */
+		before("/message", (req, res) -> {
+			User authUser = getAuthenticatedUser(req);
+			if(authUser == null) {
+				res.redirect("/login");
+				halt();
+			}
+		});
+		
+		/*
+		 * Logs the user out and redirects to the public timeline
+		 */
+		get("/logout", (req, res) -> {
+			removeAuthenticatedUser(req);
+			res.redirect("/public");
+			return null;
+		});
 		
 	}
 	
