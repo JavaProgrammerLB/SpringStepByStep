@@ -4,10 +4,10 @@
 	<h2>Sign Up</h2>
 	<#if error??>
 		<div class="error">
-			<strong>Error:</strong> $(error)
+			<strong>Error:</strong> ${error}
 		</div>
 	</#if>
-	<for action="/register" method="post">
+	<form action="/register" method="post">
 	<dl>
 		<dt>Username：
 		<dd><input type="text" name="username" maxlength="50" size="30" value="${username!}">

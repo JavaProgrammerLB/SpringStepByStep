@@ -1,4 +1,5 @@
 <#import "masterTemplate.ftl" as layout>
+
 <@layout.masterTemplate title="Timeline">
 	<h2>${pageTitle}</h2>
 	<#if user??>
@@ -26,7 +27,7 @@
 				<li> <img src="${message.gravatar}"><p>
 				<strong><a href="/t/${message.username}">${message.username}</a></strong>
 				${message.text}
-				<small>&mdash; ${message.pubDataStr}</small>				
+				<small>&mdash; ${message.pubDateStr}</small>				
 				<#else>
 					<li><em>There're no messages so far.</em>
 			</#list>
@@ -34,4 +35,4 @@
 			<li><em>There's no messages so far.</em>
 		</#if>
 	</ul>
-<@layout.masterTemplate>
+</@layout.masterTemplate>

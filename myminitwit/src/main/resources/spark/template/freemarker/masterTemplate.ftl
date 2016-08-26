@@ -17,7 +17,7 @@
 					<a href="/public">public timeline</a> |
 					<a href="/logout">sign out [${user.username}]</a>
 				<#else>
-					<a  href="/publc">public timeline</a> |
+					<a  href="/public">public timeline</a> |
 					<a  href="/register">sign up</a> |
 					<a  href="/login">sign in</a>
 				</#if>
@@ -30,4 +30,4 @@
 			</div>
 		</div>
 	</body>
-<#macro>
+</#macro>
