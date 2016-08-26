@@ -6,43 +6,18 @@ import static spark.Spark.halt;
 import static spark.Spark.post;
 import static spark.SparkBase.staticFileLocation;
 
-
-
-
-
-
-
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-
-
-
-
-
-
 import org.apache.commons.beanutils.BeanUtils;
 import org.eclipse.jetty.util.MultiMap;
 import org.eclipse.jetty.util.UrlEncoded;
 
-
-
-
-
-
-
 import spark.ModelAndView;
 import spark.Request;
 import spark.template.freemarker.FreeMarkerEngine;
-
-
-
-
-
 
 import spark.utils.StringUtils;
 
