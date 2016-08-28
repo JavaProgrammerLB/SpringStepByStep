@@ -1,4 +1,4 @@
-package com.yitianyigexiangfa.mail.di.resource.mail.impl;
+package com.yitianyigexiangfa.mail.di.autowire.mail.impl;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
