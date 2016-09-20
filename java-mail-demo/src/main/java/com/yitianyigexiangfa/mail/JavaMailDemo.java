@@ -44,7 +44,7 @@ public class JavaMailDemo {
 			  EmailAttachment attachment = new EmailAttachment();
 			  System.out.println(System.getProperty("user.dir"));
 			  attachment.setPath("src/main/resources/john.jpg");
-//			  attachment.setURL(new URL("http://www.apache.org/images/asf_logo_wide.gif"));
+// 通过url添加附件			  attachment.setURL(new URL("http://www.apache.org/images/asf_logo_wide.gif"));
 			  attachment.setDisposition(EmailAttachment.ATTACHMENT);
 			  attachment.setDescription("Picture of John");
 			  attachment.setName("John.jpg");
