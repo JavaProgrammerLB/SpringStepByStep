@@ -93,10 +93,8 @@ public class JavaMailDemo {
 			  // send the email
 			  email.send();
 		} catch (MalformedURLException e) {
-			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		} catch (EmailException e) {
-			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		}
 	}
@@ -130,10 +128,8 @@ public class JavaMailDemo {
 			  // send the email
 			  email.send();
 		} catch (MalformedURLException e) {
-			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		} catch (EmailException e) {
-			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		}
 	}

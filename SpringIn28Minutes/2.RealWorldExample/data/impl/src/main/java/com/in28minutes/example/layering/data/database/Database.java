@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import com.in28minutes.example.layering.model.api.client.Todo;
 
-//TODO : Ideally should use jdbc interfacing or an ORM
 // A Dummy database just to quickly work something out
 
 @Component

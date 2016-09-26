@@ -16,7 +16,6 @@ public class LoadADocFromAUrl {
 			String title = doc.title();
 			System.out.println(title);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
