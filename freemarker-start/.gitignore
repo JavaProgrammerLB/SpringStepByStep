@@ -1,0 +1,14 @@
+#Eclipse
+.classpath
+.project
+.settings/
+
+#Maven
+log/
+target/
+
+#Mac
+.DS_Store
+
+#Groovy
+/bin/
