@@ -18,6 +18,7 @@ public class ConnectDatabase {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/table", username, password);
 			stmt = con.createStatement();
 			rs = stmt.executeQuery("SELECT * FROM user");
 			while (rs.next()) {
@@ -26,6 +27,7 @@ public class ConnectDatabase {
 				String name = rs.getString(index ++);
 				String email = rs.getString(index ++);
 				String pw = rs.getString(index ++);
+				System.out.println("user:" + user_id + "name:" + name + "emai:" + email + "pass:" + pw);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -39,6 +41,7 @@ public class ConnectDatabase {
 	public static void main(String[] args) {
 		ConnectDatabase con = new ConnectDatabase();
 		try {
+			con.connectToAndQueryDatabase("username", "password");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
