@@ -17,12 +17,14 @@ import org.jsoup.select.Elements;
 public class GetTheNewstLJSW {
 		
 	public static void main(String[] args) {
+		System.out.println("start here");
 		//List<String> noList = new ArrayList<String>();
 		Map<String, String> no2url = new HashMap<String, String>();
 		try {
 			Document doc = Jsoup.connect("http://i.youku.com/u/UNTEzNTY1OTgw").get();
 			// Get the video-list block
-			Elements elements = doc.getElementsByClass("video-list");
+//			Elements elements = doc.getElementsByClass("video-list");
+			Elements elements = doc.getElementsByClass("YK-box");
 			// Verify the size of elements
 			if (elements != null && elements.size() > 0){				
 				// Get the only element
