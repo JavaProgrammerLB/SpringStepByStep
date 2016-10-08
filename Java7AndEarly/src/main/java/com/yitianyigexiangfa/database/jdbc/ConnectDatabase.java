@@ -1,4 +1,4 @@
-package com.yitianyigexiangfa.jdbc;
+package com.yitianyigexiangfa.database.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
