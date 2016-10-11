@@ -19,6 +19,10 @@ public class StringTest {
 		getStringAfterLastPoint(s4);
 		String s5 = "";
 		getStringAfterLastPoint(s5);
+		// 字符串截取
+		String s6 = "r5520";
+		System.out.println(s6.substring(1));
+		
 	}
 	
 	public String getStringAfterLastPoint(String s){
