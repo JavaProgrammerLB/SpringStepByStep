@@ -11,7 +11,7 @@ public class CmdGo {
 
 	public static void main(String[] args) throws InterruptedException {
 		try {
-			Process p = Runtime.getRuntime().exec("javac");
+			Process p = Runtime.getRuntime().exec("svn help");
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String line = null;
 			System.out.println("hello");
