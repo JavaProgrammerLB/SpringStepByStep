@@ -54,10 +54,8 @@ public class FreemarkerTest {
             template.process(root, out);  
             out.flush();  
 		} catch (IOException e) {
-			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		} catch (TemplateException e) {
-			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		}
 	}
