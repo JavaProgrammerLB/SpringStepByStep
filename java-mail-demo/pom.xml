@@ -3,7 +3,21 @@
   <groupId>com.yitianyigexiangfa.mail</groupId>
   <artifactId>java-mail.demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+		<freemarker.version>2.3.23</freemarker.version>
+	</properties>
   <dependencies>
+  	<dependency>
+		<groupId>com.sun.mail</groupId>
+		<artifactId>javax.mail</artifactId>
+		<version>1.5.6</version>
+	</dependency>
+	<dependency>
+  		<groupId>com.sun.mail</groupId>
+  		<artifactId>javax.mail</artifactId>
+  		<version>1.5.6</version>
+  		<classifier>sources</classifier>
+	</dependency>
   	<dependency>
   		<groupId>org.apache.commons</groupId>
   		<artifactId>commons-email</artifactId>
@@ -20,5 +34,22 @@
   		<artifactId>javax.mail-api</artifactId>
   		<version>1.5.6</version>
   	</dependency>
+  	<dependency>
+		<groupId>org.freemarker</groupId>
+		<artifactId>freemarker</artifactId>
+		<version>${freemarker.version}</version>
+	</dependency>
   </dependencies>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<configuration>
+  				<source>1.8</source>
+  				<target>1.8</target>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>
