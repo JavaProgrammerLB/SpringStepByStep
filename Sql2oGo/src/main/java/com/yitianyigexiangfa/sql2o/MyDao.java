@@ -7,23 +7,25 @@ import org.sql2o.Sql2o;
 
 import com.yitianyigexiangfa.sql2o.bean.User;
 
+import javax.sql.DataSource;
+
 public class MyDao {
 
 	private Sql2o sql2o;
 	
 	public MyDao() {
-		this.sql2o = new Sql2o("jdbc:mysql://localhost:3306/schema","user","user");
+        this.sql2o = new Sql2o("jdbc:mysql://localhost:3306/schema","user","user");
 	}
 	
 	public static void main(String[] args) {
 		MyDao m = new MyDao();
 		// 创建一个用户对象 
 		User user = new User();
-		user.setUsername("user");
-		user.setPw("pw");
-		user.setEmail("email");
+		user.setUsername("user3");
+		user.setPw("pw23");
+		user.setEmail("email23");
 		// 插入一条数据到数据库
-		m.add(user);
+		m.add2(user);
 		List<User>users = m.getAllUsers();
 		for (User user2 : users) {
 			System.out.println(user2.getUser_id() + " " + user2.getUsername() + " " + user2.getEmail() + " " + user2.getPw());
@@ -45,5 +47,20 @@ public class MyDao {
 		try (Connection con = sql2o.open();){
 			con.createQuery(sql).addParameter("username", username).addParameter("email", email).addParameter("pw", pw).executeUpdate();
 		}
+	}
+
+	public void add2(User user){
+        String username = user.getUsername();
+        String pass = user.getPw();
+        String emai = user.getEmail();
+        String sql = "INSERT INTO user(username, email, pw) values (:username, :email, :pw)";
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql).bind(user).executeUpdate();
+        }
+    }
+
+	public void delete(){
+		// 删除文件
+
 	}
 }
