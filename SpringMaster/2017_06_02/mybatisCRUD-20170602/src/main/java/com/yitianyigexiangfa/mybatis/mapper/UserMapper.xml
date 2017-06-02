@@ -3,9 +3,9 @@
 <mapper namespace="com.yitianyigexiangfa.mybatis.mapper.UserMapper">
 	<resultMap type="User" id="userMap">
 		<id property="id" column="id" javaType="java.lang.Integer"/>
-		<result property="username" column="username" javaType="java.lang.String"/>
-		<result property="password" column="password" javaType="java.lang.String"/>
-		<result property="account" column="account" javaType="java.lang.Double"/>
+		<result property="username" column="username" javaType="string"/>
+		<result property="password" column="password" javaType="string"/>
+		<result property="account" column="account" javaType="_double"/>
 	</resultMap>
 	<insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
 		insert into t_user (username, password, account) values (#{username}, #{password}, #{account} )
@@ -13,7 +13,7 @@
 	<delete id="deleteUser" parameterType="int">
 		delete from t_user where id=#{id}
 	</delete>
-	<update id="updateUser">
+	<update id="updateUser" parameterType="User">
 		update t_user set username=#{username}, password=#{password}, account=#{account} where id=#{id}
 	</update>
 	<select id="selectUserById" resultMap="userMap" parameterType="int">

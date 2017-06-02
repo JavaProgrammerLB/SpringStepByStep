@@ -45,4 +45,13 @@ public class User {
 		this.account = account;
 	}
 
+	public User() {
+	}
+
+	@Override
+	public String toString() {
+		return "(用户编号：" + id + " 用户名称：" + username + " 用户密码：" + password + " 用户账号：" + account + ")";
+	}
+	
+	
 }
