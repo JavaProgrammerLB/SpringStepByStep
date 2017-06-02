@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yitianyigexiangfa.mybatis.mapper.UserMapper">
+	<resultMap type="User" id="userMap">
+		<id property="id" column="id" javaType="java.lang.Integer"/>
+		<result property="username" column="username" javaType="java.lang.String"/>
+		<result property="password" column="password" javaType="java.lang.String"/>
+		<result property="account" column="account" javaType="java.lang.Double"/>
+	</resultMap>
+	<insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+		insert into t_user (username, password, account) values (#{username}, #{password}, #{account} )
+	</insert>
+	<delete id="deleteUser" parameterType="int">
+		delete from t_user where id=#{id}
+	</delete>
+	<update id="updateUser">
+		update t_user set username=#{username}, password=#{password}, account=#{account} where id=#{id}
+	</update>
+	<select id="selectUserById" resultMap="userMap" parameterType="int">
+		select * from t_user where id=#{id}
+	</select>
+	<select id="selectUsers" resultMap="userMap">
+		select * from t_user
+	</select>
+</mapper>
