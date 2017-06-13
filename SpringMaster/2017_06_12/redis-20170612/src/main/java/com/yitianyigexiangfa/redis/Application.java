@@ -46,7 +46,7 @@ public class Application {
 	StringRedisTemplate template(RedisConnectionFactory connectionFactory){
 		return new StringRedisTemplate(connectionFactory);
 	}
-	
+
 	public static void main(String[] args) throws InterruptedException{
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		
